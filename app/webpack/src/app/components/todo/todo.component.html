@@ -1,0 +1,33 @@
+<!--component html goes here -->
+<h2>Form Create new List Task</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="todo-form" novalidate (ngSubmit)="onSubmit(todoForm)" [formGroup]="todoForm">
+
+                <div class="form-group">
+                    <label for="name">Name of List Task</label>
+                    <input type="text" class="form-control" name="username" placeholder="enter name list task" formControlName="name" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" [disabled]="todoForm.invalid" class="btn btn-primary">Add New Todo List</button>
+                    <button type="button" class="btn btn-success" (click)="resetForm()">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>List Todo</h2>
+            <ul class="list-group">
+                <a class="list-group-item" *ngFor="let todo of todos" [routerLink]="['/todo', todo.id]">
+                    {{ todo.name }}
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+node_modules
+npm-debug.*
+app/**/*.js
+*.js.map
+dist
